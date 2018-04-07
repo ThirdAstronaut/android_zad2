@@ -23,6 +23,19 @@ public class MainActivity extends AppCompatActivity {
         ItemTouchHelper.Callback callback = new SwipeHelper(mCustomAdapter);
         ItemTouchHelper helper = new ItemTouchHelper(callback);
         helper.attachToRecyclerView(mRecyclerView);
+
+/*
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+
+        if (fragment == null) {
+            fragment = new CrimeFragment();
+            fm.beginTransaction()
+                    .add(R.id.fragment_container, fragment)
+                    .commit();
+        }
+
+*/
     }
 
     private void setRecyclerView() {

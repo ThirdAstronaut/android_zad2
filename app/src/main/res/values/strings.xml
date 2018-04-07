@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">android_zad2_238292</string>
     <string name="movie_poster_string">Movie poster</string>
+    <string name="back_arrow_string">back arrow</string>
 </resources>
