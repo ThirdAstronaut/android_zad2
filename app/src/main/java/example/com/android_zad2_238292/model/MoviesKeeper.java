@@ -48,7 +48,7 @@ public class MoviesKeeper {
         String imageUri = "movie";
         int i = 0;
         for (Map.Entry<String, String> entry : movies.entrySet()) {
-            mMoviesList.add(new Movie(i, entry.getKey(), entry.getValue(), imageUri+ (i % movies.size())));
+            mMoviesList.add(new Movie(i, entry.getKey(), entry.getValue(), imageUri + (i % movies.size())));
             i++;
         }
     }

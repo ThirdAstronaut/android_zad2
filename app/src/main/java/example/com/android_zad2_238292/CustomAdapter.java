@@ -50,7 +50,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         holder.mPosterImageView.setImageResource(resources.getIdentifier(movie.getImage(), "drawable", ctx.getPackageName()));
     }
 
-    public Movie getItemAtPositon(int position){
+    public Movie getItemAtPosition(int position) {
         return MoviesKeeper.getInstance().getMoviesList().get(position);
     }
 
@@ -59,7 +59,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         return MoviesKeeper.getInstance().getMoviesList().size();
     }
 
-    public void removeItem(int id){
+    public void removeItem(int id) {
         MoviesKeeper.getInstance().getMoviesList().remove(id);
         this.notifyItemRemoved(id);
     }

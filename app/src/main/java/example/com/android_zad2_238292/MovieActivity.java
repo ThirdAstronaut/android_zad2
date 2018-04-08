@@ -8,46 +8,37 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.GridView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
 public class MovieActivity extends FragmentActivity {
-    GridView gridView;
-    private ImageButton backArrow;
 
-    private ImageView posterImageView;
-    private TextView movieTitleTextView;
-    private TextView movieCategoryTextView;
+    static final String[] MOBILE_OS = new String[]{
+            "Android", "iOS", "Windows", "Blackberry"};
 
-    static final String[] MOBILE_OS = new String[] {
-            "Android", "iOS","Windows", "Blackberry" };
     public static void start(Context context, String movieTitle, String movieCategory) {
         Intent starter = new Intent(context, MovieActivity.class);
         starter.putExtra("movieTitle", movieTitle);
         starter.putExtra("movieCategory", movieCategory);
         context.startActivity(starter);
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie);
-        ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
+        ViewPager pager = findViewById(R.id.viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
 
-        posterImageView = findViewById(R.id.movie_poster_image_view);
-        movieTitleTextView= findViewById(R.id.movie_title_text_view);
-        movieCategoryTextView = findViewById(R.id.movie_category_text_view);
+        ImageView posterImageView = findViewById(R.id.movie_poster_image_view);
+        TextView movieTitleTextView = findViewById(R.id.movie_title_text_view);
+        TextView movieCategoryTextView = findViewById(R.id.movie_category_text_view);
 
         movieTitleTextView.setText(getIntent().getStringExtra("movieTitle"));
         movieCategoryTextView.setText(getIntent().getStringExtra("movieCategory"));
     }
+
     private class MyPagerAdapter extends FragmentPagerAdapter {
 
         public MyPagerAdapter(FragmentManager fm) {
@@ -56,11 +47,14 @@ public class MovieActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int pos) {
-            switch(pos) {
+            switch (pos) {
 
-                case 0: return ActorsListFragment.newInstance("FirstFragment, Instance 1");
-                case 1: return ActorsPhotosFragment.newInstance("SecondFragment, Instance 1");
-                default: return ActorsListFragment.newInstance("FirstFragment, Instance 1");
+                case 0:
+                    return ActorsListFragment.newInstance("FirstFragment, Instance 1");
+                case 1:
+                    return ActorsPhotosFragment.newInstance("SecondFragment, Instance 1");
+                default:
+                    return ActorsListFragment.newInstance("FirstFragment, Instance 1");
             }
         }
 
@@ -91,19 +85,5 @@ public class MovieActivity extends FragmentActivity {
         ft.remove(fragment);
         ft.commit();
 */
-
-
-    private void initMenu() {
-        LayoutInflater li = LayoutInflater.from(this);
-        View customView = li.inflate(R.layout.custom_movie_menu_layout, null);
-        backArrow = customView.findViewById(R.id.back_arrow);
-        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayShowHomeEnabled(false);
-            actionBar.setDisplayShowTitleEnabled(false);
-            actionBar.setCustomView(customView);
-            actionBar.setDisplayShowCustomEnabled(true);
-        }
-    }
 
 }

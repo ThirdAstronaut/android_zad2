@@ -22,12 +22,6 @@
                   android:typeface="monospace"
                   android:height="40sp" />
 
-        <Button
-            android:id="@+id/row_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:icon="@android:drawable/ic_delete"
-            />
     </TableRow>
 
     <TableRow android:layout_height="wrap_content"

@@ -9,10 +9,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 
 public class SwipeHelper extends ItemTouchHelper.SimpleCallback {
 
-   private CustomAdapter mCustomAdapter;
-   public SwipeHelper(int dragDirs, int swipeDirs) {
-        super(dragDirs, swipeDirs);
-    }
+    private CustomAdapter mCustomAdapter;
 
     public SwipeHelper(CustomAdapter customAdapter) {
         super(ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT);

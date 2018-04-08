@@ -1,4 +1,4 @@
-package example.com.android_zad2_238292;
+package example.com.android_zad2_238292.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,14 +10,12 @@ import java.util.List;
 public class PersonKeeper {
     private static PersonKeeper instance = null;
     private List<Person> mPersonList;
+
     private PersonKeeper() {
         mPersonList = new ArrayList<>();
-        mPersonList.add(new Person("John", "Snow", "12/03/1991"));
-        mPersonList.add(new Person("John", "Snow", "12/03/1991"));
-        mPersonList.add(new Person("John", "Snow", "12/03/1991"));
-        mPersonList.add(new Person("John", "Snow", "12/03/1991"));
-        mPersonList.add(new Person("John", "Snow", "12/03/1991"));
-        mPersonList.add(new Person("John", "Snow", "12/03/1991"));
+        for (int i = 0; i < 20; i++) {
+            mPersonList.add(new Person("John" + i, "Snow" + i, i + "/03/1991"));
+        }
     }
 
     public List<Person> getPersonList() {
@@ -25,7 +23,7 @@ public class PersonKeeper {
     }
 
     public static PersonKeeper getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new PersonKeeper();
         }
         return instance;
