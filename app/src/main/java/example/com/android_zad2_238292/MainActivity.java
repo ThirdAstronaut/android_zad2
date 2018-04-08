@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(View view, int position) {
                         MovieActivity.start(getApplicationContext(), mCustomAdapter.getItemAtPosition(position).getTitle(),
-                                mCustomAdapter.getItemAtPosition(position).getCategory());
+                                mCustomAdapter.getItemAtPosition(position).getCategory(),mCustomAdapter.getItemAtPosition(position).getImage());
                     }
                 })
         );

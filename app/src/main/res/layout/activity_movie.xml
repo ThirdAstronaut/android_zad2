@@ -13,8 +13,8 @@
         android:layout_height="100dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:contentDescription="@string/movie_poster_string"
+        app:layout_constraintBottom_toTopOf="@+id/movie_title_text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,19 +24,21 @@
         android:id="@+id/movie_title_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
         android:textSize="@dimen/huge_text_size"
         app:layout_constraintBottom_toBottomOf="@+id/movie_poster_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/movie_category_text_view"/>
 
     <TextView
         android:id="@+id/movie_category_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/medium_text_size"
-        android:layout_marginBottom="46dp"
+        android:layout_width="385dp"
+        android:layout_height="21dp"
+        android:textAlignment="center"
+        android:textSize="@dimen/normal_text_size"
         app:layout_constraintBottom_toTopOf="@+id/viewPager"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movie_title_text_view"/>
 
@@ -44,9 +46,23 @@
         android:id="@+id/viewPager"
         android:layout_width="wrap_content"
         android:layout_height="252dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movie_poster_image_view"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline2"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
 </android.support.constraint.ConstraintLayout>

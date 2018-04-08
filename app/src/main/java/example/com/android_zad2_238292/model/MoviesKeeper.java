@@ -47,11 +47,31 @@ public class MoviesKeeper {
     private void initMoviesList() {
         String imageUri = "movie";
         int i = 0;
-        for (Map.Entry<String, String> entry : movies.entrySet()) {
+        mMoviesList.add(new Movie(i, "Skazani na Shawshank", "Dramat", imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Nietykalni", "Biograficzny",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Zielona mila", "Dramat",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Ojciec chrzestny", "Gangsterski",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Dwunastu gniewnych ludzi", "Dramat Sądowy",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Forrest Gump", "Dramat",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Lot nad kukułczym gniazdem", "Psychologiczny",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Ojciec chrzestny II", "Gangsterski",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Władca Pierścieni: Powrót króla", "Fantasy",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Lista Schindlera", "Wojenny",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Pulp Fiction", "Gangsterski",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Życie jest piękne", "Dramat",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Siedem", "Kryminał",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Władca Pierścieni: Dwie wieże", "Fantasy",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Podziemny krąg", "Thriller",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Piękny umysł", "Biograficzny",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Chłopcy z ferajny", "Dramat",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Pianista", "Biograficzny",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Incepcja", "Thriller",imageUri + (i++ % movies.size())));
+        mMoviesList.add(new Movie(i,"Django", "Western",imageUri + (i++ % movies.size())));
+ /*       for (Map.Entry<String, String> entry : movies.entrySet()) {
             mMoviesList.add(new Movie(i, entry.getKey(), entry.getValue(), imageUri + (i % movies.size())));
             i++;
         }
-    }
+ */   }
 
     public List<Movie> getMoviesList() {
         return mMoviesList;

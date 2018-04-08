@@ -2,6 +2,7 @@ package example.com.android_zad2_238292;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -17,10 +18,11 @@ public class MovieActivity extends FragmentActivity {
     static final String[] MOBILE_OS = new String[]{
             "Android", "iOS", "Windows", "Blackberry"};
 
-    public static void start(Context context, String movieTitle, String movieCategory) {
+    public static void start(Context context, String movieTitle, String movieCategory, String moviePoster) {
         Intent starter = new Intent(context, MovieActivity.class);
         starter.putExtra("movieTitle", movieTitle);
         starter.putExtra("movieCategory", movieCategory);
+        starter.putExtra("moviePoster", moviePoster);
         context.startActivity(starter);
     }
 
@@ -37,6 +39,8 @@ public class MovieActivity extends FragmentActivity {
 
         movieTitleTextView.setText(getIntent().getStringExtra("movieTitle"));
         movieCategoryTextView.setText(getIntent().getStringExtra("movieCategory"));
+        Resources resources = getApplicationContext().getResources();
+        posterImageView.setImageResource(resources.getIdentifier(getIntent().getStringExtra("moviePoster"), "drawable", getApplicationContext().getPackageName()));
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
