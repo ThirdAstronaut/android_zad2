@@ -14,7 +14,7 @@ public class PersonKeeper {
     private PersonKeeper() {
         mPersonList = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            mPersonList.add(new Person("John" + i, "Snow" + i, i + "/03/1991"));
+            mPersonList.add(new Person("John" + i, "Snow" + i, (i+1) + "/03/1991"));
         }
     }
 

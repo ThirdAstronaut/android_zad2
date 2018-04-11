@@ -22,18 +22,16 @@ public class ActorsListFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.activity_main_list_view, container, false);
+        View v = inflater.inflate(R.layout.actors_list_view, container, false);
 
         ListView listPerson = v.findViewById(R.id.main_list_view);
-        PersonAdapter customAdapter = new PersonAdapter(container.getContext(), R.layout.listitem, PersonKeeper.getInstance().getPersonList());
+        PersonAdapter customAdapter = new PersonAdapter(container.getContext(), R.layout.actors_list_view_item, PersonKeeper.getInstance().getPersonList());
         listPerson.setAdapter(customAdapter);
         return v;
     }
 
-    public static ActorsListFragment newInstance(String text) {
-
-        ActorsListFragment f = new ActorsListFragment();
-        return f;
+    public static ActorsListFragment newInstance() {
+        return new ActorsListFragment();
     }
 }
 
@@ -56,7 +54,7 @@ class PersonAdapter extends ArrayAdapter<Person> {
         if (view == null) {
             LayoutInflater layoutInflater;
             layoutInflater = LayoutInflater.from(context);
-            view = layoutInflater.inflate(R.layout.listitem, null);
+            view = layoutInflater.inflate(R.layout.actors_list_view_item, null);
         }
 
 
@@ -64,19 +62,15 @@ class PersonAdapter extends ArrayAdapter<Person> {
 
         if (p != null) {
             TextView tt1 = view.findViewById(R.id.name_row_textView);
-            TextView tt2 = view.findViewById(R.id.surname_row_textView);
-            TextView tt3 = view.findViewById(R.id.birthDate_row_textView);
+            TextView tt2 = view.findViewById(R.id.birthDate_row_textView);
 
             if (tt1 != null) {
-                tt1.setText(p.getName());
+                String name = p.getName()+" "+p.getSurname();
+                tt1.setText(name);
             }
 
             if (tt2 != null) {
-                tt2.setText(p.getSurname());
-            }
-
-            if (tt3 != null) {
-                tt3.setText(p.getBirthDate());
+                tt2.setText(p.getBirthDate());
             }
         }
         return view;

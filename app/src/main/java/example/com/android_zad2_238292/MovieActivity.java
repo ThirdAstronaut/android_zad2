@@ -15,9 +15,6 @@ import android.widget.TextView;
 
 public class MovieActivity extends FragmentActivity {
 
-    static final String[] MOBILE_OS = new String[]{
-            "Android", "iOS", "Windows", "Blackberry"};
-
     public static void start(Context context, String movieTitle, String movieCategory, String moviePoster) {
         Intent starter = new Intent(context, MovieActivity.class);
         starter.putExtra("movieTitle", movieTitle);
@@ -45,7 +42,7 @@ public class MovieActivity extends FragmentActivity {
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
 
-        public MyPagerAdapter(FragmentManager fm) {
+        MyPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
@@ -54,11 +51,11 @@ public class MovieActivity extends FragmentActivity {
             switch (pos) {
 
                 case 0:
-                    return ActorsListFragment.newInstance("FirstFragment, Instance 1");
+                    return ActorsListFragment.newInstance();
                 case 1:
-                    return ActorsPhotosFragment.newInstance("SecondFragment, Instance 1");
+                    return ActorsPhotosFragment.newInstance();
                 default:
-                    return ActorsListFragment.newInstance("FirstFragment, Instance 1");
+                    return ActorsListFragment.newInstance();
             }
         }
 
@@ -67,27 +64,4 @@ public class MovieActivity extends FragmentActivity {
             return 2;
         }
     }
-
-/*
-        FragmentManager fm = getFragmentManager();
-
-// add
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.your_placehodler, new YourFragment());
-// alternatively add it with a tag
-// trx.add(R.id.your_placehodler, new YourFragment(), "detail");
-        ft.commit();
-
-// replace
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.your_placehodler, new YourFragment());
-        ft.commit();
-
-// remove
-        Fragment fragment = fm.findFragmentById(R.id.your_placehodler);
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.remove(fragment);
-        ft.commit();
-*/
-
 }

@@ -11,7 +11,7 @@ public class SwipeHelper extends ItemTouchHelper.SimpleCallback {
 
     private CustomAdapter mCustomAdapter;
 
-    public SwipeHelper(CustomAdapter customAdapter) {
+    SwipeHelper(CustomAdapter customAdapter) {
         super(ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT);
         mCustomAdapter = customAdapter;
     }
