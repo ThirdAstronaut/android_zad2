@@ -38,7 +38,8 @@
     <TextView
         android:id="@+id/birthDate_row_textView"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_weight="1"
@@ -56,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="440dp"/>
+        app:layout_constraintGuide_percent="0.5"/>
 
 
 </android.support.constraint.ConstraintLayout>
